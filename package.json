@@ -1,7 +1,7 @@
 {
-  "name": "webpack-simple",
+  "name": "webpack-vue-full",
   "version": "1.0.0",
-  "description": "A simple Webpack setup for quick prototyping.",
+  "description": "A template is constructed by webpack, supporting vue and dll.",
   "main": "main.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --host 0.0.0.0 --port 5004 --hot --inline --color --progress --config ./build/webpack.config.js",

@@ -1,7 +1,8 @@
 /* 引入样式文件 */
 import '@STYLES/base.less';
 import '@STYLES/common.less';
-import 'iview/dist/styles/iview.css';
+import '@STYLES/config_iview_theme.less';
+// import 'iview/dist/styles/iview.css';
 
 /* 引入脚本文件 */
 import Vue from 'vue';

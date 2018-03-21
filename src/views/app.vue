@@ -2,6 +2,7 @@
   <div class="app">
     <h1>App 组件</h1>
     <my-header></my-header>
+    <Button type="primary">按钮</Button>
   </div>
 </template>
 

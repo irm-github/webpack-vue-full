@@ -8,15 +8,7 @@
     <script type="text/javascript">(<%= require('./src/assets/scripts/responsive.js') %>)({MAX_WIDTH: 1080})</script>
   </head>
   <body>
-    <div class="container">
-      <h1 class="title"> Hello Webpack </h1>
-    </div>
-    <div id="root">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
-    </div>
-
-  <script type="text/javascript" src="<%= dllSrc %>"></script>
+    <div id="root"></div>
+    <script type="text/javascript" src="<%= dllSrc %>"></script>
   </body>
 </html>

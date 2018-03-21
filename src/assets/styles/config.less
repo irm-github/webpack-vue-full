@@ -1,38 +1,32 @@
 /**
- * 主体颜色
+ * 颜色
+ * Color
  */
-@main-color: #e4393c;
-@main-fade-color: lighten(@main-color, 10%);
-@main-strong-color: darken(@main-color, 10%);
-@main-stronger-color: darken(@main-color, 20%);
-@main-strongest-color: darken(@main-color, 30%);
-@vice-color: rgb(46, 63, 74);
-@vice-fade-color: #d5dbd9;
-
-@link-color: #e4393c;
-@emphasize-color: #e4393c;
-@background-color: #efeff4;
-@auxiliary-color-1: #343337;
+// 主色
+@color-primary: #deb775;
+@color-light-primary: #ebc991;
+@color-dark-primary: #d5a759;
+// 辅助色
+@color-info: #deb775;
+@color-success: #19be6b;
+@color-warning: #ff9900;
+@color-error: #ed3f14;
+@color-white: #ffffff;
+// 中性色
+@color-content: #333333;
+@color-title: #222222;
+@color-secondary: #666666;
+@color-icon: #404245;
+@color-disabled: #999999;
+@color-sub: #e5e5e5;
+@color-border: #e5e5e5;
+@color-divider: #eeeeee;
+@color-table: #fbfbfb;
+@color-background: #deb775;
 
 /**
- * 字体颜色
- */
-@fontColor-main: #000000;
-@fontColor-ordinary: #333333;
-@fontColor-secondary: #777777;
-@fontColor-fade: #999999;
-@fontColor-link: #e4393c;
-@fontColor-emphasize: #e4393c;
-@fontColor-disabled: rgb(147, 147, 147);
-
-/**
- * 其他颜色
- */
-@divide-border-color: #d9d7d8;
-@btn-disabled-color: rgb(191, 192, 191);
-
-/**
- * 字体大小设置
+ * 字体大小
+ * FontSize
  */
 @fontSize-banner-title: 60px;
 @fontSize-banner-subtitle: 20px;
@@ -44,6 +38,14 @@
 @fontSize-sm-text: 12px;
 @fontSize-xs-text: 11px;
 
+/**
+ * 集成样式
+ * Configuration
+ */
+.cfg-tip-text {
+  font-size: @fontSize-sm-text;
+  color: @color-disabled;
+}
 
 /**
  * 动画

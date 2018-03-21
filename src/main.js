@@ -1,7 +1,7 @@
 /* 引入样式文件 */
+import '@STYLES/config_iview_theme.less';
 import '@STYLES/base.less';
 import '@STYLES/common.less';
-import '@STYLES/config_iview_theme.less';
 // import 'iview/dist/styles/iview.css';
 
 /* 引入脚本文件 */
@@ -22,6 +22,8 @@ import axios from '@SRC/configs/axios/index.js';
 import storeConfig from '@SRC/configs/store/index.js';
 import AssetsUtil from '@ASSETS/utils/index.js';
 
+import App from '@VIEWS/app.vue';
+
 const util = {
   ...IrmUtil,
   ...AssetsUtil,
@@ -40,6 +42,8 @@ if(!PRODUCTION){
 }
 
 const vm = new Vue({
-    router,
-    store,
-}).$mount('#root');
+  el: '#root',
+  router,
+  store,
+  render: h=>h(App)
+});

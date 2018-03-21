@@ -1,17 +1,11 @@
 <template lang="html">
   <div class="app">
-    <h1>App 组件</h1>
-    <my-header></my-header>
-    <Button type="primary">按钮</Button>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from '@COMPONENTS/Header.vue';
 export default {
-  components: {
-    MyHeader: Header,
-  },
   mounted () {
   },
 }

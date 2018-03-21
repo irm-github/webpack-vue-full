@@ -34,6 +34,7 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
       'vue': 'vue/dist/vue.esm.js',
       'vuex': 'vuex/dist/vuex.min.js',
@@ -108,7 +109,9 @@ module.exports = {
         test: /\.js$/,
         include: SRC_PATH,
         exclude: [
-          path.resolve(ASSETS_PATH, './scripts/responsive.js')
+          path.resolve(ASSETS_PATH, './scripts/responsive.js'),
+          // path.resolve(SRC_PATH, './configs/router/routes.js'),
+          // path.resolve(SRC_PATH, './configs/router/index.js'),
         ],
         use: 'babel-loader',
       },

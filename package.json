@@ -5,9 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --host 0.0.0.0 --port 5004 --hot --inline --color --progress --config ./build/webpack.config.js",
-    "dll": "webpack --mode production --progress --profile --color --display-modules --display-chunks --config ./build/webpack.dll.config.js",
-    "dll:start": "npm run dll && npm start",
-    "dll:build": "npm run dll && npm run build",
+    "dllDev": "webpack --mode development --progress --profile --color --display-modules --display-chunks --config ./build/webpack.dll.config.js",
+    "dllProd": "webpack --mode production --progress --profile --color --display-modules --display-chunks --config ./build/webpack.dll.config.js",
+    "dllDev:start": "npm run dllDev && npm start",
+    "dllProd:build": "npm run dllProd && npm run build",
     "build": "cross-env NODE_ENV=production webpack --mode production --progress --profile --color --display-modules --display-chunks --config ./build/webpack.production.config.js",
     "analyze": "cross-env NODE_ENV=development webpack --progress --profile --color --display-modules --display-chunks --config ./build/webpack.production.config.js"
   },

@@ -32,7 +32,7 @@ var webpackConfig = {
     filename: '[name].bundle.[hash:8].js',
     chunkFilename: "[name].chunk.[chunkhash:8].js"
   },
-  devtool: 'eval-source-map',
+  devtool: '#eval-source-map',
   devServer: {
     hot: true,
     inline: true,

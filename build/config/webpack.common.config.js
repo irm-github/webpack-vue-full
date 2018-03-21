@@ -107,6 +107,9 @@ module.exports = {
       {
         test: /\.js$/,
         include: SRC_PATH,
+        exclude: [
+          path.resolve(ASSETS_PATH, './scripts/responsive.js')
+        ],
         use: 'babel-loader',
       },
       {

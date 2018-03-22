@@ -42,7 +42,7 @@ var webpackConfig = {
   resolve: CONFIGURATION.resolve,
   externals: CONFIGURATION.externals,
   module: CONFIGURATION.module,
-  optimization: CONFIGURATION.optimization,
+  // optimization: CONFIGURATION.optimization,
   plugins: (function(){
     var ret = [
       new DefinePlugin({

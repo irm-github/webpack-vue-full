@@ -1,24 +1,20 @@
 <template lang="html">
 <div class="layout">
   <Layout :style="{minHeight: '100vh'}">
-    <Sider class="layout-sider">
-      <Menu theme="dark" active-name="1" width="auto">
-        <MenuGroup title="内容管理">
-          <MenuItem name="1">
-            <Icon type="document-text"></Icon>
-            文章管理
-          </MenuItem>
-          <MenuItem name="2">
-            <Icon type="chatbubbles"></Icon>
-            评论管理
-          </MenuItem>
-        </MenuGroup>
-      </Menu>
+    <Sider class="layout-sider" :style="{background: '#fff'}">
+      <left-menu :menus="menus" :active-name="activeName" @on-select="handleMenuSelected"></left-menu>
     </Sider>
     <Layout>
-      <Header></Header>
-      <Content>
-        <router-view></router-view>
+      <Header :style="{background: '#fff', borderBottom: '1px solid #DDDEE1'}"></Header>
+      <Content class="layout-content">
+        <Breadcrumb class="layout-content-breadcrumb">
+          <BreadcrumbItem v-show="!(index===0 && item.name=='/' && breadcrumbs[1]['name']==='/index')"
+            v-for="(item, index) in breadcrumbs"
+            :key="index" :to="item.name">{{ item.meta.title }}</BreadcrumbItem>
+        </Breadcrumb>
+        <div class="layout-content-view">
+          <router-view></router-view>
+        </div>
       </Content>
       <Footer class="layout-footer">2018 © 版权信息</Footer>
     </Layout>
@@ -27,7 +23,37 @@
 </template>
 
 <script>
-export default {}
+import { appRoutes } from '@SRC/configs/router/routes.js';
+import LeftMenu from '@VIEWS/common/leftMenu.vue';
+
+export default {
+  components: {
+    LeftMenu,
+  },
+  data () {
+    return {
+      menus: appRoutes[0]['children'],
+      activeName: '',
+
+      breadcrumbs: [],
+    }
+  },
+  watch: {
+    '$route' (newR, oldR) {
+      this.activeName = newR.name;
+      this.breadcrumbs = newR.matched;
+    },
+  },
+  mounted () {
+    this.activeName = this.$route.name;
+    this.breadcrumbs = this.$route.matched;
+  },
+  methods: {
+    handleMenuSelected (name) {
+      this.$router.push(name);
+    },
+  },
+}
 </script>
 
 <style lang="less">
@@ -43,6 +69,16 @@ export default {}
 
 .layout-sider {
   padding: 64px 0 0;
+}
+
+.layout-content-breadcrumb {
+  margin: 15px 0;
+  padding: 10px 0 10px 20px;
+  background-color: @color-white;
+}
+
+.layout-content-view {
+  padding: 0 20px;
 }
 
 .layout-footer {
